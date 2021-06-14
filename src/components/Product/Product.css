@@ -1,0 +1,23 @@
+.product{
+    display: flex;
+    margin-left: 70px;
+    margin-right: 50px;
+}
+
+.product-single{
+    margin-bottom: 30px;
+    padding: 10px;
+    margin-right: 50px;
+}
+.product-item h3{
+    color: blue;
+    font-weight: 400px;
+}
+.main-button{
+    background-color: goldenrod;
+    border: 1px solid ghostwhite;
+    height: 30px;
+    width: 140px;
+    border-radius: 5px;
+    cursor: pointer;
+}
