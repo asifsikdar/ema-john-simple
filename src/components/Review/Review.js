@@ -6,17 +6,17 @@ import fakeData from '../../fakeData';
 import Items from '../../components/Items/Items';
 import Cart from '../Cart/Cart';
 import Image from '../../images/giphy.gif';
+import { useHistory } from 'react-router-dom';
 // import Cart from './components/Cart/';
 
 
 
 const Review = () => {
+    const history = useHistory();
     const [cartProduct, setCartProduct] = useState([]);
     const [confirmOrder , setConfirmOrder] = useState(false);
-    const handleOrder = () => {
-        setCartProduct([]);
-        setConfirmOrder(true);
-        processOrder();
+    const handleOrderCheckout = () => {
+        history.push('/shipment');
     }
     const handleCart = (productKey) => {
         const newCart = cartProduct.filter(pd => pd.key !== productKey);
@@ -47,14 +47,13 @@ const Review = () => {
                         product={pd}
                         handleCart = {handleCart}
                     >
-                        
                     </Items>) 
                 }
              {confirm} 
             </div>
             <div>
                 <Cart cart={cartProduct}>
-                    <button onClick={handleOrder} className="main-button">Place-Order</button>
+                    <button onClick={handleOrderCheckout} className="main-button">Checkout</button>
                </Cart>
             </div>
         </div>
